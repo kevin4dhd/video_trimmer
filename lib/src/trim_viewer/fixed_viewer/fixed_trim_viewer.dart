@@ -319,7 +319,6 @@ class _FixedTrimViewerState extends State<FixedTrimViewer>
     // zone is widget.sideTapSize (left) + frame (center) + widget.sideTapSize (right)
     if (startDifference <= widget.editorProperties.sideTapSize &&
         endDifference >= -widget.editorProperties.sideTapSize) {
-      widget.onDragStart?.call();
       _allowDrag = true;
     } else {
       debugPrint("Dragging is outside of frame, ignoring gesture...");
