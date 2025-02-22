@@ -6,8 +6,13 @@ import 'package:video_trimmer/video_trimmer.dart';
 
 class TrimmerView extends StatefulWidget {
   final File file;
+  final VoidCallback? onDragStart;
 
-  const TrimmerView(this.file, {super.key});
+  const TrimmerView(
+    this.file, {
+    super.key,
+    this.onDragStart,
+  });
   @override
   State<TrimmerView> createState() => _TrimmerViewState();
 }
@@ -105,6 +110,7 @@ class _TrimmerViewState extends State<TrimmerView> {
                       onChangeEnd: (value) => _endValue = value,
                       onChangePlaybackState: (value) =>
                           setState(() => _isPlaying = value),
+                      onDragStart: widget.onDragStart,
                     ),
                   ),
                 ),

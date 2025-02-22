@@ -68,6 +68,7 @@ class FixedTrimViewer extends StatefulWidget {
   final FixedTrimAreaProperties areaProperties;
 
   final VoidCallback onThumbnailLoadingComplete;
+  final VoidCallback? onDragStart;
 
   /// Widget for displaying the video trimmer.
   ///
@@ -128,6 +129,7 @@ class FixedTrimViewer extends StatefulWidget {
     this.onChangePlaybackState,
     this.editorProperties = const TrimEditorProperties(),
     this.areaProperties = const FixedTrimAreaProperties(),
+    this.onDragStart,
   });
 
   @override
@@ -317,6 +319,7 @@ class _FixedTrimViewerState extends State<FixedTrimViewer>
     // zone is widget.sideTapSize (left) + frame (center) + widget.sideTapSize (right)
     if (startDifference <= widget.editorProperties.sideTapSize &&
         endDifference >= -widget.editorProperties.sideTapSize) {
+      widget.onDragStart?.call();
       _allowDrag = true;
     } else {
       debugPrint("Dragging is outside of frame, ignoring gesture...");
