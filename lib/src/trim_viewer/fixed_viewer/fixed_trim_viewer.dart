@@ -345,6 +345,7 @@ class _FixedTrimViewerState extends State<FixedTrimViewer>
   /// Makes sure the limits are respected.
   void _onDragUpdate(DragUpdateDetails details) {
     if (!_allowDrag) return;
+    widget.onDragStart?.call();
 
     if (_dragType == EditorDragType.left) {
       _startCircleSize = widget.editorProperties.circleSizeOnDrag;
