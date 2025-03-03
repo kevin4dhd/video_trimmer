@@ -505,9 +505,11 @@ class _FixedTrimViewerState extends State<FixedTrimViewer>
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       Duration(
-                              milliseconds:
-                                  _videoEndPos.toInt() - _videoStartPos.toInt())
-                          .format(DurationStyle.FORMAT_MM_SS),
+                        milliseconds: math.min(
+                          _videoEndPos.toInt() - _videoStartPos.toInt(),
+                          1000,
+                        ),
+                      ).format(DurationStyle.FORMAT_MM_SS),
                       style: widget.durationTextStyle,
                     ),
                   ),
