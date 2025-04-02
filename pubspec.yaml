@@ -14,7 +14,7 @@ dependencies:
   video_player: ^2.9.2
   ffmpeg_kit_flutter:
     git:
-      url: https://github.com/carl-designlibro/ffmpeg-kit.git
+      url: https://github.com/kevin4hig/ffmpeg-kit.git
       path: flutter/flutter
       ref: flutter_fix_retired_v6.0.3
   path_provider: ^2.1.1
