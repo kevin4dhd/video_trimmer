@@ -16,6 +16,7 @@ dependencies:
     git:
       url: https://github.com/carl-designlibro/ffmpeg-kit.git
       path: flutter/flutter
+      ref: flutter_fix_retired_v6.0.3
   path_provider: ^2.1.1
   intl: ^0.19.0
   path: ^1.9.0
