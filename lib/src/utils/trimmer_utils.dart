@@ -3,7 +3,7 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'dart:ui';
 
-import 'package:ffmpeg_kit_flutter/ffmpeg_kit.dart';
+import 'package:ffmpeg_kit_flutter_full_gpl/ffmpeg_kit.dart';
 import 'package:path_provider/path_provider.dart';
 
 /// Formats a [Duration] object to a human-readable string.
@@ -25,9 +25,10 @@ String _formatDuration(Duration duration) {
 int _mapQualityToFFmpegScale(int quality) {
   if (quality < 1) return 1; // Best quality
   if (quality > 100) return 31; // Worst quality
-  return ((101 - quality) / 3.25)
-      .toInt()
-      .clamp(1, 31); // Scale 1 (best) to 31 (worst)
+  return ((101 - quality) / 3.25).toInt().clamp(
+    1,
+    31,
+  ); // Scale 1 (best) to 31 (worst)
 }
 
 /// Generates a stream of thumbnails for a given video.
@@ -82,7 +83,9 @@ Stream<List<Uint8List?>> generateThumbnail({
 
   log('Generating thumbnails for video: $videoPath');
   log('Total thumbnails to generate: $numberOfThumbnails');
-  log('Quality: $quality% (FFmpeg scale: ${_mapQualityToFFmpegScale(quality)})');
+  log(
+    'Quality: $quality% (FFmpeg scale: ${_mapQualityToFFmpegScale(quality)})',
+  );
   log('Generating thumbnails...');
   log('---------------------------------');
 
@@ -98,8 +101,9 @@ Stream<List<Uint8List?>> generateThumbnail({
 
       // Calculate the timestamp for the thumbnail in milliseconds
       final timestamp = (eachPart * i).toInt();
-      final formattedTimestamp =
-          _formatDuration(Duration(milliseconds: timestamp));
+      final formattedTimestamp = _formatDuration(
+        Duration(milliseconds: timestamp),
+      );
       final thumbnailPath = "${tmpDir.path}/thumbnail_$i.jpg";
 
       // Delete the file if it already exists
@@ -125,7 +129,9 @@ Stream<List<Uint8List?>> generateThumbnail({
       }
 
       if (bytes != null) {
-        log('Timestamp: $formattedTimestamp | Size: ${(bytes.length / 1000).toStringAsFixed(2)} kB');
+        log(
+          'Timestamp: $formattedTimestamp | Size: ${(bytes.length / 1000).toStringAsFixed(2)} kB',
+        );
         log('---------------------------------');
         lastBytes = bytes; // Cache the last valid thumbnail
       } else {
