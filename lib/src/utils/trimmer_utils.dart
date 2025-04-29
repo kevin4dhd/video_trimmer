@@ -4,9 +4,9 @@ import 'dart:typed_data';
 import 'dart:ui';
 
 <<<<<<< HEAD
-import 'package:ffmpeg_kit/ffmpeg_kit.dart';
+import 'package:ffmpeg_kit_flutter/ffmpeg_kit.dart';
 =======
-import 'package:ffmpeg_kit_flutter_full_gpl/ffmpeg_kit.dart';
+import 'package:ffmpeg_kit_flutter_flutter_full_gpl/ffmpeg_kit.dart';
 >>>>>>> 1a1076d2f64ae4449cc996d8f0b3ffca5336b7a1
 import 'package:path_provider/path_provider.dart';
 
