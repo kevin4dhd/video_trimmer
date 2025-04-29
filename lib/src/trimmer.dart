@@ -1,8 +1,14 @@
 import 'dart:async';
 import 'dart:io';
+<<<<<<< HEAD
 import 'package:ffmpeg_kit/ffmpeg_kit.dart';
 import 'package:ffmpeg_kit/ffmpeg_kit_config.dart';
 import 'package:ffmpeg_kit/return_code.dart';
+=======
+import 'package:ffmpeg_kit_flutter_full_gpl/ffmpeg_kit.dart';
+import 'package:ffmpeg_kit_flutter_full_gpl/ffmpeg_kit_config.dart';
+import 'package:ffmpeg_kit_flutter_full_gpl/return_code.dart';
+>>>>>>> 1a1076d2f64ae4449cc996d8f0b3ffca5336b7a1
 import 'package:path/path.dart';
 
 import 'package:flutter/material.dart';
