@@ -15,7 +15,7 @@ dependencies:
   ffmpeg_kit_flutter_full_gpl:
     git:
       url: https://github.com/kevin4hig/ffmpeg_kit_flutter_full_gpl.git
-      ref: flutter-upgrade/remove-v1-embedding
+      ref: 1724b9962e4593e47a351752b364e4e60962a728
   path_provider: ^2.1.1
   intl: ^0.19.0
   path: ^1.9.0
