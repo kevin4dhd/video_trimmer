@@ -12,7 +12,10 @@ dependencies:
     sdk: flutter
 
   video_player: ^2.9.2
-  ffmpeg_kit_flutter_full_gpl: ^6.0.3
+  ffmpeg_kit_flutter_full_gpl:
+    git:
+      url: https://github.com/kevin4hig/ffmpeg_kit_flutter_full_gpl.git
+      ref: flutter-upgrade/remove-v1-embedding
   path_provider: ^2.1.1
   intl: ^0.19.0
   path: ^1.9.0
