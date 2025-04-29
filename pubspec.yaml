@@ -12,11 +12,7 @@ dependencies:
     sdk: flutter
 
   video_player: ^2.9.2
-  ffmpeg_kit_flutter:
-    git:
-      url: https://github.com/kevin4hig/ffmpeg-kit.git
-      path: flutter/flutter
-      ref: 8484a4ffd9890c66fa4dc76be220e6599a918688
+  ffmpeg_kit_min_gpl: ^6.0.3+1-LTS
   path_provider: ^2.1.1
   intl: ^0.19.0
   path: ^1.9.0
