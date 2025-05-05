@@ -73,7 +73,7 @@ class _VideoViewerState extends State<VideoViewer> {
             padding: const EdgeInsets.all(0.0),
             child: Center(
               child: AspectRatio(
-                aspectRatio: (controller.value.rotationCorrection == 270 ||
+                aspectRatio: (controller.value.rotationCorrection == 90 ||
                         controller.value.rotationCorrection == 270)
                     ? 1 / controller.value.aspectRatio
                     : controller.value.aspectRatio,
